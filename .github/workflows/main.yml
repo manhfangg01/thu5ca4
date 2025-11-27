@@ -27,7 +27,7 @@ jobs:
           local-dir: ./
 
           # Thư mục trên server (VD: /public_html)
-          server-dir: /public_html
+          server-dir: /
 
           # Tùy chọn: delete các file cũ không còn trong repo
           dangerous-clean-slate: false
