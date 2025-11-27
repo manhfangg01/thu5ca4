@@ -23,11 +23,8 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
 
-          # Thư mục bạn muốn upload (root repo)
           local-dir: ./
 
-          # Thư mục trên server (VD: /public_html)
-          server-dir: /
+          server-dir: www.manhtesting.somee.com/
 
-          # Tùy chọn: delete các file cũ không còn trong repo
           dangerous-clean-slate: false
