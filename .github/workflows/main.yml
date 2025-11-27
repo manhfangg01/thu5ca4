@@ -1,0 +1,33 @@
+name: Deploy basic html app
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  ftp-deploy:
+    name: 📤 Deploy to FTP Server
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout code
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # FTP Deploy
+      - name: Upload files via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+
+          # Thư mục bạn muốn upload (root repo)
+          local-dir: ./
+
+          # Thư mục trên server (VD: /public_html)
+          server-dir: /public_html
+
+          # Tùy chọn: delete các file cũ không còn trong repo
+          dangerous-clean-slate: false
