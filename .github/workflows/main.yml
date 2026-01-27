@@ -25,6 +25,6 @@ jobs:
 
           local-dir: ./
 
-          server-dir: www.manhtesting.somee.com/
+          server-dir: www.phanvanmanh.somee.com/
 
           dangerous-clean-slate: false
